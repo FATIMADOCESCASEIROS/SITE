@@ -4,72 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fátima Cocadas e Doces Caseiros</title>
+    <!-- Importação de Fontes com Serifa Clássica -->
     <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --cor-primaria: #ff5722; /* Laranja vibrante (Coral) */
-            --cor-secundaria: #fff8e1; /* Creme claro */
-            --cor-destaque: #ffc107; /* Amarelo */
-            --cor-texto: #333333;
+            --cor-primaria: #4e342e; /* Marrom Chocolate */
+            --cor-secundaria: #fffbf2; /* Creme suave */
+            --cor-destaque: #8d6e63; /* Marrom elegante */
+            --cor-texto: #2d2d2d;
             --whatsapp: #25d366;
         }
 
         body { 
-            font-family: 'Roboto', sans-serif; 
+            font-family: 'Lora', serif; 
             margin: 0; 
             background-color: var(--cor-secundaria); 
             color: var(--cor-texto);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        .container { max-width: 1000px; margin: auto; padding: 0 20px; }
+        .container { max-width: 900px; margin: auto; padding: 0 20px; }
         section { padding: 60px 0; }
 
         header { 
             background-color: var(--cor-primaria);
-            color: white; 
-            padding: 80px 0; 
+            color: #f5f5f5; 
+            padding: 100px 0; 
             text-align: center;
+            border-bottom: 8px solid var(--cor-destaque);
         }
 
         header h1 { 
-            font-family: 'Lobster', cursive; /* Fonte divertida */
-            font-size: 4em; 
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em; 
             margin: 0;
+            letter-spacing: 2px;
         }
 
-        .hero { background: white; text-align: center; }
-        .hero h2 { color: var(--cor-primaria); font-size: 2.5em; margin-bottom: 15px; }
+        header p { font-style: italic; font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
 
-        .produtos { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 20px; 
-            text-align: center; 
+        .hero { background: white; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        .hero h2 { 
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-primaria); 
+            font-size: 2.8em; 
+            margin-bottom: 20px; 
         }
 
-        .card { 
+        /* Layout da Lista de Sabores */
+        .cardapio { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 40px; 
+            margin-top: 20px;
+        }
+
+        .item-doce { 
             background: white; 
-            padding: 20px;
-            border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            padding: 40px;
+            border-radius: 4px; 
+            border-left: 5px solid var(--cor-primaria);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        
+        .item-doce h3 { 
+            font-family: 'Playfair Display', serif;
+            color: var(--cor-primaria); 
+            font-size: 2.2em;
+            margin: 0 0 15px 0; 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
 
-        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
-        .card h3 { color: var(--cor-primaria); }
+        .item-doce p { 
+            font-size: 1.1em; 
+            color: #444; 
+            text-align: justify;
+        }
 
-        .cta { background: var(--cor-destaque); text-align: center; }
+        .cta { background: var(--cor-destaque); color: white; text-align: center; }
+        .cta h3 { font-family: 'Playfair Display', serif; font-size: 2.2em; margin-bottom: 10px; }
         
         .btn {
             background-color: var(--whatsapp);
             color: white;
-            padding: 15px 30px;
+            padding: 20px 45px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 4px;
             font-weight: bold;
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 25px;
+            font-size: 1.2em;
+            transition: transform 0.2s;
         }
+        .btn:hover { transform: scale(1.05); }
 
         .wpp-float {
             position: fixed;
@@ -79,18 +107,17 @@
             color: white;
             width: 60px;
             height: 60px;
-            border-radius: 50px;
+            border-radius: 50%;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            line-height: 60px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
             z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        footer { text-align: center; padding: 20px; background: #eee; color: #777; }
+        footer { text-align: center; padding: 60px 20px; background: #2d2d2d; color: #bbb; }
+        footer a { color: #fff; text-decoration: none; border-bottom: 1px solid #555; }
     </style>
 </head>
 <body>
@@ -98,67 +125,79 @@
     <header>
         <div class="container">
             <h1>Fátima Cocadas</h1>
-            <p>Doces Caseiros com o Sabor da Tradição</p>
+            <p>Tradição Artesanal e Sabor Inigualável</p>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h2>O verdadeiro sabor do coco</h2>
-            <p>Receitas de família passadas do geração em geração usando apenas ingredientes selecionados para garantir a suculência que você merece.</p>
+            <h2>Nossas Especialidades</h2>
+            <p>Conheça nossa linha de cocadas artesanais, feitas com o carinho e a pureza que sua família merece.</p>
         </div>
     </section>
 
-    <section class="produtos">
-        <div class="container">
-            <div class="produtos">
-                <div class="card">
-                    <img src="images.unsplash.com" alt="Cocada">
-                    <h3>Cocada Branca</h3>
-                    <p>Clássica, cremosa e carregada de coco.</p>
-                </div>
-                <div class="card">
-                    <img src="images.unsplash.com" alt="Cocada Queimada">
-                    <h3>Cocada Queimada</h3>
-                    <p>O toque especial do coco tostado levemente caramelizado.</p>
-                </div>
-                <div class="card">
-                    <img src="images.unsplash.com" alt="Doce de Leite">
-                    <h3>Doces de Pote</h3>
-                    <p>Doce de leite e compotas feitas no tacho de cobre.</p>
-                </div>
+    <section class="container">
+        <div class="cardapio">
+            
+            <!-- Cocada Natural -->
+            <div class="item-doce">
+                <h3>Cocada Natural</h3>
+                <p>Desfrute da autenticidade do coco fresco em cada mordida. Nossa cocada natural é cuidadosamente preparada com ingredientes selecionados, sem conservantes ou aditivos artificiais, garantindo sabor puro e textura irresistível. Uma opção deliciosa e tradicional para quem valoriza qualidade e naturalidade.</p>
             </div>
+
+            <!-- Cocada Queimada -->
+            <div class="item-doce">
+                <h3>Cocada Queimada</h3>
+                <p>Um clássico irresistível! Nossa cocada queimada é feita com coco fresco e açúcar caramelizado, resultando em uma textura crocante por fora e macia por dentro, com aquele sabor intenso e levemente tostado que conquista qualquer paladar. Feita artesanalmente, sem conservantes, é a escolha perfeita para quem busca tradição e sabor marcante.</p>
+            </div>
+
+            <!-- Cocada de Maracujá -->
+            <div class="item-doce">
+                <h3>Cocada de Maracujá</h3>
+                <p>Delicie-se com a combinação perfeita de coco fresco e maracujá natural, resultando em uma cocada cremosa, leve e com um toque cítrico irresistível. Feita artesanalmente, sem conservantes, é a escolha ideal para quem busca sabor autêntico e sofisticado.</p>
+            </div>
+
+            <!-- Cocada de Abacaxi -->
+            <div class="item-doce">
+                <h3>Cocada de Abacaxi</h3>
+                <p>Uma combinação tropical que encanta! Nossa cocada de abacaxi é feita com coco fresco e abacaxi natural, resultando em uma textura cremosa e sabor equilibrado entre doce e levemente ácido. Produzida artesanalmente e sem conservantes, oferece um sabor fresco e autêntico em cada mordida.</p>
+            </div>
+
+            <!-- Cocada de Limão -->
+            <div class="item-doce">
+                <h3>Cocada de Limão</h3>
+                <p>Refrescante e irresistível! Nossa cocada de limão combina coco fresco e limão natural, resultando em uma textura cremosa com sabor cítrico delicado e marcante. Feita artesanalmente e sem conservantes, é a escolha ideal para quem busca sabor autêntico e equilibrado.</p>
+            </div>
+
         </div>
     </section>
 
     <section class="cta">
         <div class="container">
-            <h3>Gostaria de fazer um pedido ou revender?</h3>
-            <p>Fale diretamente com a Fátima agora mesmo!</p>
-            <!-- Número de telefone 48991317838 -->
-    <a 
-    href="https://wa.me/5548991317838?text=Olá%20Fátima,%20vi%20seu%20site%20e%20gostaria%20de%20fazer%20um%20pedido"
-    target="_blank"
-   class="btn">
-  Chamar no WhatsApp
-</a>
+            <h3>Faça seu Pedido</h3>
+            <p>Levamos o melhor do doce artesanal até você ou seu estabelecimento.</p>
+            <a href="wa.me" target="_blank" class="btn">
+                Enviar Mensagem no WhatsApp
+            </a>
         </div>
     </section>
 
-    <!-- Botão Flutuante -->
-    <a href="wa.me" class="wpp-float" target="_blank">
-        <span style="font-size: 15px;">WPP</span>
-    </a>
+    <a href="wa.me" class="wpp-float" target="_blank">WPP</a>
 
     <footer>
         <div class="container">
-            <p>Rua Miguel Teixeira 140, Morro da Fumaça - SC</p>
-            <p>&copy; 2025 Fátima Cocadas e Doces Caseiros.</p>
+            <p>
+                <a href="www.google.com" target="_blank">
+                    📍 Rua Miguel Teixeira 140, Morro da Fumaça - SC
+                </a>
+            </p>
+            <p>&copy; 2025 Fátima Cocadas e Doces Caseiros. Desde sempre, o sabor da tradição.</p>
         </div>
     </footer>
 
 </body>
 </html>
+
 
 
 
