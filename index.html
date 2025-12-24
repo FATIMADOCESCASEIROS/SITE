@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fátima Cocadas e Doces Caseiros</title>
-    <!-- Importação de Fontes com Serifa Clássica -->
     <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
@@ -24,12 +23,13 @@
         }
 
         .container { max-width: 900px; margin: auto; padding: 0 20px; }
-        section { padding: 60px 0; }
+        section { padding: 80px 0; }
 
+        /* HEADER */
         header { 
             background-color: var(--cor-primaria);
             color: #f5f5f5; 
-            padding: 100px 0; 
+            padding: 100px 0 50px 0; 
             text-align: center;
             border-bottom: 8px solid var(--cor-destaque);
         }
@@ -43,25 +43,32 @@
 
         header p { font-style: italic; font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
 
-        /* MENU DE NAVEGAÇÃO */
+        /* MENU FIXO NO TOPO */
         .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             background-color: var(--cor-primaria);
-            padding: 10px 20px;
+            padding: 10px 0;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .menu ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 40px;
             margin: 0;
             padding: 0;
-            justify-content: center; /* centraliza os links */
+            justify-content: center;
         }
 
         .menu ul li a {
             text-decoration: none;
             color: #fff;
             font-weight: bold;
+            font-size: 1.1em;
             transition: color 0.3s, transform 0.3s;
         }
 
@@ -70,12 +77,26 @@
             transform: scale(1.1);
         }
 
-        .hero { background: white; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        /* HERO / NOSSAS ESPECIALIDADES */
+        .hero { 
+            background: white; 
+            text-align: center; 
+            border-bottom: 1px solid #e0e0e0;
+            padding-top: 120px; /* espaço para menu fixo */
+        }
+
         .hero h2 { 
             font-family: 'Playfair Display', serif;
             color: var(--cor-primaria); 
             font-size: 2.8em; 
             margin-bottom: 20px; 
+        }
+
+        .hero p { 
+            font-size: 1.2em; 
+            max-width: 700px;
+            margin: 0 auto;
+            color: #444;
         }
 
         /* Layout da Lista de Sabores */
@@ -109,44 +130,11 @@
             text-align: justify;
         }
 
+        /* CTA */
         .cta { background: var(--cor-destaque); color: white; text-align: center; }
         .cta h3 { font-family: 'Playfair Display', serif; font-size: 2.2em; margin-bottom: 10px; }
-        
-        .btn {
-            background-color: var(--whatsapp);
-            color: white;
-            padding: 20px 45px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 25px;
-            font-size: 1.2em;
-            transition: transform 0.2s;
-        }
-        .btn:hover { transform: scale(1.05); }
 
-        .wpp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
-            z-index: 100;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        footer { text-align: center; padding: 60px 20px; background: #2d2d2d; color: #bbb; }
-        footer a { color: #fff; text-decoration: none; border-bottom: 1px solid #555; }
-
-        /* BOTÃO WHATSAPP BRILHANTE */
+        /* BOTÃO WHATSAPP */
         .whatsapp-btn {
           display: inline-flex;
           align-items: center;
@@ -174,18 +162,32 @@
           from { box-shadow: 0 0 10px var(--whatsapp), 0 0 20px var(--whatsapp), 0 0 30px var(--whatsapp); }
           to { box-shadow: 0 0 20px var(--whatsapp), 0 0 30px var(--whatsapp), 0 0 40px var(--whatsapp); }
         }
+
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .wpp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer { text-align: center; padding: 60px 20px; background: #2d2d2d; color: #bbb; }
+        footer a { color: #fff; text-decoration: none; border-bottom: 1px solid #555; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Fátima Cocadas</h1>
-            <p>Tradição Artesanal e Sabor Inigualável</p>
-        </div>
-    </header>
-
-    <!-- MENU DE NAVEGAÇÃO -->
+    <!-- MENU FIXO NO TOPO -->
     <nav class="menu">
       <ul>
         <li><a href="#home">Home</a></li>
@@ -195,11 +197,18 @@
       </ul>
     </nav>
 
-    <!-- SEÇÃO HERO -->
+    <header>
+        <div class="container">
+            <h1>Fátima Cocadas</h1>
+            <p>Tradição Artesanal e Sabor Inigualável</p>
+        </div>
+    </header>
+
+    <!-- SEÇÃO HERO / NOSSAS ESPECIALIDADES -->
     <section class="hero" id="home">
         <div class="container">
             <h2>Nossas Especialidades</h2>
-            <p>Conheça nossa linha de cocadas artesanais, feitas com o carinho e a pureza que sua família merece.</p>
+            <p>Descubra a autenticidade das nossas cocadas artesanais: sabores elaborados com coco fresco, frutas naturais e todo carinho artesanal que garante um doce **cremoso, saboroso e inesquecível** em cada mordida. Uma verdadeira experiência de tradição e qualidade para os paladares mais exigentes.</p>
         </div>
     </section>
 
