@@ -43,6 +43,33 @@
 
         header p { font-style: italic; font-size: 1.3em; opacity: 0.9; margin-top: 10px; }
 
+        /* MENU DE NAVEGAÇÃO */
+        .menu {
+            background-color: var(--cor-primaria);
+            padding: 10px 20px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+            justify-content: center; /* centraliza os links */
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: var(--cor-destaque);
+            transform: scale(1.1);
+        }
+
         .hero { background: white; text-align: center; border-bottom: 1px solid #e0e0e0; }
         .hero h2 { 
             font-family: 'Playfair Display', serif;
@@ -75,47 +102,6 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 10px;
         }
-
-        <!-- Menu de Navegação -->
-<nav class="menu">
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#sobre-nos">Sobre Nós</a></li>
-    <li><a href="#produtos">Nossos Produtos</a></li>
-    <li><a href="#contato">Fale Conosco</a></li>
-  </ul>
-</nav>
-
-<style>
-/* Estilo do menu */
-.menu {
-  background-color: #25D366; /* Verde do WhatsApp, opcional */
-  padding: 10px 20px;
-  font-family: Arial, sans-serif;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.menu ul li a:hover {
-  color: #ffeb3b; /* Amarelo ao passar o mouse */
-  transform: scale(1.1);
-}
-</style>
- }
-
 
         .item-doce p { 
             font-size: 1.1em; 
@@ -159,6 +145,35 @@
 
         footer { text-align: center; padding: 60px 20px; background: #2d2d2d; color: #bbb; }
         footer a { color: #fff; text-decoration: none; border-bottom: 1px solid #555; }
+
+        /* BOTÃO WHATSAPP BRILHANTE */
+        .whatsapp-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: var(--whatsapp);
+          color: white;
+          font-weight: bold;
+          padding: 12px 20px;
+          border-radius: 50px;
+          text-decoration: none;
+          font-family: Arial, sans-serif;
+          box-shadow: 0 0 10px var(--whatsapp), 0 0 20px var(--whatsapp), 0 0 30px var(--whatsapp);
+          transition: all 0.3s ease-in-out;
+          animation: glow 1.5s infinite alternate;
+        }
+
+        .whatsapp-btn img { width: 24px; height: 24px; }
+
+        .whatsapp-btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 20px var(--whatsapp), 0 0 30px var(--whatsapp), 0 0 40px var(--whatsapp);
+        }
+
+        @keyframes glow {
+          from { box-shadow: 0 0 10px var(--whatsapp), 0 0 20px var(--whatsapp), 0 0 30px var(--whatsapp); }
+          to { box-shadow: 0 0 20px var(--whatsapp), 0 0 30px var(--whatsapp), 0 0 40px var(--whatsapp); }
+        }
     </style>
 </head>
 <body>
@@ -170,41 +185,55 @@
         </div>
     </header>
 
-    <section class="hero">
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre-nos">Sobre Nós</a></li>
+        <li><a href="#produtos">Nossos Produtos</a></li>
+        <li><a href="#contato">Fale Conosco</a></li>
+      </ul>
+    </nav>
+
+    <!-- SEÇÃO HERO -->
+    <section class="hero" id="home">
         <div class="container">
             <h2>Nossas Especialidades</h2>
             <p>Conheça nossa linha de cocadas artesanais, feitas com o carinho e a pureza que sua família merece.</p>
         </div>
     </section>
 
-    <section class="container">
+    <!-- SEÇÃO SOBRE NÓS -->
+    <section class="container" id="sobre-nos">
+        <h2>Sobre Nós</h2>
+        <p>Há anos trazendo doces artesanais com tradição e qualidade. Cada receita é feita com amor e cuidado, mantendo o sabor autêntico que nossos clientes adoram.</p>
+    </section>
+
+    <!-- SEÇÃO PRODUTOS -->
+    <section class="container" id="produtos">
         <div class="cardapio">
             
-            <!-- Cocada Natural -->
+            <!-- Cocadas -->
             <div class="item-doce">
                 <h3>Cocada Natural</h3>
                 <p>Desfrute da autenticidade do coco fresco em cada mordida. Nossa cocada natural é cuidadosamente preparada com ingredientes selecionados, sem conservantes ou aditivos artificiais, garantindo sabor puro e textura irresistível. Uma opção deliciosa e tradicional para quem valoriza qualidade e naturalidade.</p>
             </div>
 
-            <!-- Cocada Queimada -->
             <div class="item-doce">
                 <h3>Cocada Queimada</h3>
                 <p>Um clássico irresistível! Nossa cocada queimada é feita com coco fresco e açúcar caramelizado, resultando em uma textura crocante por fora e macia por dentro, com aquele sabor intenso e levemente tostado que conquista qualquer paladar. Feita artesanalmente, sem conservantes, é a escolha perfeita para quem busca tradição e sabor marcante.</p>
             </div>
 
-            <!-- Cocada de Maracujá -->
             <div class="item-doce">
                 <h3>Cocada de Maracujá</h3>
                 <p>Delicie-se com a combinação perfeita de coco fresco e maracujá natural, resultando em uma cocada cremosa, leve e com um toque cítrico irresistível. Feita artesanalmente, sem conservantes, é a escolha ideal para quem busca sabor autêntico e sofisticado.</p>
             </div>
 
-            <!-- Cocada de Abacaxi -->
             <div class="item-doce">
                 <h3>Cocada de Abacaxi</h3>
                 <p>Uma combinação tropical que encanta! Nossa cocada de abacaxi é feita com coco fresco e abacaxi natural, resultando em uma textura cremosa e sabor equilibrado entre doce e levemente ácido. Produzida artesanalmente e sem conservantes, oferece um sabor fresco e autêntico em cada mordida.</p>
             </div>
 
-            <!-- Cocada de Limão -->
             <div class="item-doce">
                 <h3>Cocada de Limão</h3>
                 <p>Refrescante e irresistível! Nossa cocada de limão combina coco fresco e limão natural, resultando em uma textura cremosa com sabor cítrico delicado e marcante. Feita artesanalmente e sem conservantes, é a escolha ideal para quem busca sabor autêntico e equilibrado.</p>
@@ -213,64 +242,26 @@
         </div>
     </section>
 
-    <section class="cta">
+    <!-- SEÇÃO CTA / WHATSAPP -->
+    <section class="cta" id="contato">
         <div class="container">
             <h3>Faça seu Pedido</h3>
             <p>Levamos o melhor do doce artesanal até você ou seu estabelecimento.</p>
             
-          <!-- Botão do WhatsApp -->
-<a href="https://wa.me/5548991317838" target="_blank" class="whatsapp-btn">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-  Fale conosco
-</a>
-
-<style>
-.whatsapp-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #25D366; /* Verde WhatsApp */
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
-  transition: all 0.3s ease-in-out;
-  animation: glow 1.5s infinite alternate;
-}
-
-.whatsapp-btn img {
-  width: 24px;
-  height: 24px;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #25D366, 0 0 30px #25D366, 0 0 40px #25D366;
-}
-
-/* Efeito de brilho pulsante */
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366;
-  }
-  to {
-    box-shadow: 0 0 20px #25D366, 0 0 30px #25D366, 0 0 40px #25D366;
-  }
-}
-</style>
-
+            <a href="https://wa.me/5548991317838" target="_blank" class="whatsapp-btn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+              Fale conosco
+            </a>
         </div>
     </section>
 
-    <a href="wa.me" class="wpp-float" target="_blank">WPP</a>
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5548991317838" class="wpp-float" target="_blank">WPP</a>
 
     <footer>
         <div class="container">
             <p>
-                <a href="www.google.com" target="_blank">
+                <a href="https://www.google.com" target="_blank">
                     📍 Rua Miguel Teixeira 140, Morro da Fumaça - SC
                 </a>
             </p>
@@ -280,9 +271,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
