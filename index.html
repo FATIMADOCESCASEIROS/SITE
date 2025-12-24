@@ -7,79 +7,69 @@
     <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
-            --primaria: #4caf50; /* Verde menta/esmeralda */
-            --secundaria: #ffffff; /* Branco puro */
-            --destaque: #ff6f00; /* Laranja vibrante */
-            --texto: #333333;
+            --cor-primaria: #ff5722; /* Laranja vibrante (Coral) */
+            --cor-secundaria: #fff8e1; /* Creme claro */
+            --cor-destaque: #ffc107; /* Amarelo */
+            --cor-texto: #333333;
             --whatsapp: #25d366;
         }
 
         body { 
-            font-family: 'Montserrat', sans-serif; 
+            font-family: 'Roboto', sans-serif; 
             margin: 0; 
-            background-color: var(--secundaria); 
-            color: var(--texto);
+            background-color: var(--cor-secundaria); 
+            color: var(--cor-texto);
             line-height: 1.6;
         }
 
+        .container { max-width: 1000px; margin: auto; padding: 0 20px; }
+        section { padding: 60px 0; }
+
         header { 
-            background: var(--primaria);
+            background-color: var(--cor-primaria);
             color: white; 
-            padding: 80px 20px; 
+            padding: 80px 0; 
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         header h1 { 
-            font-family: 'Great Vibes', cursive; /* Fonte elegante */
+            font-family: 'Lobster', cursive; /* Fonte divertida */
             font-size: 4em; 
             margin: 0;
         }
 
-        .hero { padding: 60px 20px; text-align: center; background: #f9f9f9; }
-        .hero h2 { color: var(--primaria); font-size: 2.2em; }
+        .hero { background: white; text-align: center; }
+        .hero h2 { color: var(--cor-primaria); font-size: 2.5em; margin-bottom: 15px; }
 
         .produtos { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-            padding: 40px 20px; 
-            max-width: 1100px; 
-            margin: auto; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            text-align: center; 
         }
 
         .card { 
             background: white; 
-            border-radius: 10px; 
-            overflow: hidden; 
-            text-align: center; 
-            box-shadow: 0 8px 16px rgba(0,0,0,0.05); 
-            transition: 0.3s;
-            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
         }
 
-        .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
+        .card h3 { color: var(--cor-primaria); }
 
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-
-        .card-content { padding: 20px; }
-        .card h3 { color: var(--destaque); margin-top: 0; }
-
-        .cta { background: var(--destaque); color: white; padding: 60px 20px; text-align: center; }
+        .cta { background: var(--cor-destaque); text-align: center; }
         
         .btn {
             background-color: var(--whatsapp);
             color: white;
-            padding: 18px 35px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1em;
             display: inline-block;
-            transition: 0.3s;
+            margin-top: 15px;
         }
-
-        .btn:hover { background-color: #1ebe57; }
 
         .wpp-float {
             position: fixed;
@@ -100,59 +90,66 @@
             text-decoration: none;
         }
 
-        footer { text-align: center; padding: 40px; background: #f1f1f1; color: #777; }
+        footer { text-align: center; padding: 20px; background: #eee; color: #777; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Fátima Cocadas</h1>
-        <p>Doces Caseiros com o Sabor da Tradição</p>
+        <div class="container">
+            <h1>Fátima Cocadas</h1>
+            <p>Doces Caseiros com o Sabor da Tradição</p>
+        </div>
     </header>
 
     <section class="hero">
-        <h2>O verdadeiro sabor do coco</h2>
-        <p>Receitas de família passadas de geração em geração, usando apenas ingredientes selecionados para garantir a suculência que você merece.</p>
+        <div class="container">
+            <h2>O verdadeiro sabor do coco</h2>
+            <p>Receitas de família passadas do geração em geração usando apenas ingredientes selecionados para garantir a suculência que você merece.</p>
+        </div>
     </section>
 
-    <div class="produtos">
-        <div class="card">
-            <img src="images.unsplash.com" alt="Cocada">
-            <div class="card-content">
-                <h3>Cocada Branca</h3>
-                <p>Clássica, cremosa e carregada de coco fresco.</p>
+    <section class="produtos">
+        <div class="container">
+            <div class="produtos">
+                <div class="card">
+                    <img src="images.unsplash.com" alt="Cocada">
+                    <h3>Cocada Branca</h3>
+                    <p>Clássica, cremosa e carregada de coco.</p>
+                </div>
+                <div class="card">
+                    <img src="images.unsplash.com" alt="Cocada Queimada">
+                    <h3>Cocada Queimada</h3>
+                    <p>O toque especial do coco tostado levemente caramelizado.</p>
+                </div>
+                <div class="card">
+                    <img src="images.unsplash.com" alt="Doce de Leite">
+                    <h3>Doces de Pote</h3>
+                    <p>Doce de leite e compotas feitas no tacho de cobre.</p>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img src="images.unsplash.com" alt="Cocada Queimada">
-            <div class="card-content">
-                <h3>Cocada Queimada</h3>
-                <p>O toque especial do coco tostado levemente caramelizado.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images.unsplash.com" alt="Doce de Leite">
-            <div class="card-content">
-                <h3>Doces de Pote</h3>
-                <p>Doce de leite e compotas feitas no tacho de cobre.</p>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <section class="cta">
-        <h3>Faça sua encomenda hoje!</h3>
-        <p>Atendemos varejo e atacado para revendedores em toda a região.</p>
-        <br>
-        <a href="wa.me Fátima, vi seu site e gostaria de fazer um pedido!" target="_blank" class="btn">Fazer Pedido no WhatsApp</a>
+        <div class="container">
+            <h3>Gostaria de fazer um pedido ou revender?</h3>
+            <p>Fale diretamente com a Fátima agora mesmo!</p>
+            <!-- Número de telefone 48991317838 -->
+            <a href="wa.me Fátima, vi seu site e gostaria de fazer um pedido!" target="_blank" class="btn">Chamar no WhatsApp</a>
+        </div>
     </section>
 
+    <!-- Botão Flutuante -->
     <a href="wa.me" class="wpp-float" target="_blank">
         <span style="font-size: 15px;">WPP</span>
     </a>
 
     <footer>
-        <p>Rua Miguel Teixeira 140, Morro da Fumaça - SC</p>
-        <p>&copy; 2025 Fátima Cocadas e Doces Caseiros. Feito com amor.</p>
+        <div class="container">
+            <p>Rua Miguel Teixeira 140, Morro da Fumaça - SC</p>
+            <p>&copy; 2025 Fátima Cocadas e Doces Caseiros.</p>
+        </div>
     </footer>
 
 </body>
