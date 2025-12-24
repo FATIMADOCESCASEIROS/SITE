@@ -1,42 +1,115 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fátima Doces Caseiros</title>
+    <title>Fátima Cocadas e Doces Caseiros</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f7f7f7;
-            padding: 40px;
+        :root {
+            --primaria: #6d4c41; /* Marrom doce */
+            --secundaria: #f5f5f5; /* Branco coco */
+            --destaque: #ffa000; /* Amarelo ouro/caramelo */
+            --whatsapp: #25d366;
+        }
+        body { font-family: 'Verdana', sans-serif; margin: 0; background-color: var(--secundaria); color: #333; }
+        
+        header { 
+            background: var(--primaria); 
+            color: white; 
+            padding: 40px 20px; 
             text-align: center;
-            margin: 0;
-            color: #333;
+            border-bottom: 5px solid var(--destaque);
         }
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
+
+        .hero { padding: 60px 20px; text-align: center; background: white; }
+        .hero h2 { color: var(--primaria); font-size: 2.5em; }
+
+        .produtos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            padding: 40px; 
+            max-width: 1200px; 
+            margin: auto;
         }
-        h1 {
-            color: #d67aae;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+
+        .card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-        p {
-            font-size: 1.1em;
-            color: #555;
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--primaria); }
+
+        .cta { 
+            background: var(--whatsapp); 
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+            margin-top: 40px;
         }
+
+        .btn {
+            background-color: white;
+            color: var(--whatsapp);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        footer { text-align: center; padding: 20px; font-size: 0.9em; color: #777; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bem-vindos à Fátima Doces Caseiros!</h1>
-        <p>Nosso site oficial está em construção. Em breve, traremos novidades e informações sobre nossos deliciosos doces artesanais.</p>
-        <p><strong>Aguarde!</strong></p>
+
+    <header>
+        <h1>Fátima Cocadas</h1>
+        <p>Doces Caseiros com o Sabor da Tradição</p>
+    </header>
+
+    <section class="hero">
+        <h2>Direto da nossa fábrica para sua mesa</h2>
+        <p>Receitas de família, ingredientes selecionados e o verdadeiro sabor do coco.</p>
+    </section>
+
+    <div class="produtos">
+        <div class="card">
+            <h3>Cocada Branca</h3>
+            <p>A clássica e suculenta, feita com coco fresco selecionado.</p>
+        </div>
+        <div class="card">
+            <h3>Cocada Queimada</h3>
+            <p>O sabor caramelizado que é o favorito de nossos clientes.</p>
+        </div>
+        <div class="card">
+            <h3>Doces de Pote</h3>
+            <p>Doce de leite, ambrosia e compotas variadas com gostinho de infância.</p>
+        </div>
+        <div class="card">
+            <h3>Atacado e Revenda</h3>
+            <p>Seja um parceiro! Preços especiais para lanchonetes e mercados.</p>
+        </div>
     </div>
+
+    <section class="cta">
+        <h3>Gostaria de fazer um pedido ou revender?</h3>
+        <p>Fale diretamente com a Fátima agora mesmo!</p>
+        <!-- Troque o número abaixo pelo seu (ex: 5511999999999) -->
+        <a href="wa.me" target="_blank" class="btn">Chamar no WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Fátima Cocadas e Doces Caseiros. Feito com amor.</p>
+    </footer>
+
 </body>
 </html>
